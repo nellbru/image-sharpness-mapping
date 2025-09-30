@@ -14,8 +14,10 @@ Clone the repository:
 git clone https://github.com/nellbru/image-sharpness-mapping.git
 cd image-sharpness-mapping
 ```
-
-Run `sharpness.py`.
+Run the script:
+```bash
+python sharpness.py
+```
 
 This script calculates the blockwise Laplacian variance, applies a threshold to classify sharp regions, overlays the result for visualization, and saves the output image.
 
