@@ -25,14 +25,9 @@ This script calculates the blockwise Laplacian variance, applies a threshold to 
 All generated figures are saved to **Results/**. The result shows the original image with a transparent overlay marking blocks classified as sharp (based on variance threshold).
 
 <p align="center">
-  <div style="display:inline-block; text-align:center; width:49.5%;">
-    <img src="Images/BestFocusPlane.jpg" width="100%"/><br/>
-    Source image
-  </div>
-  <div style="display:inline-block; text-align:center; width:49.5%;">
-    <img src="Results/BestFocusPlane.jpg" width="100%"/><br/>
-    Result
-  </div>
+  <img src="Images/BestFocusPlane.jpg" width="49.5%"/>
+  <img src="Results/BestFocusPlane.jpg" width="49.5%"/><br/>
+  Source image and result
 </p>
 
 
