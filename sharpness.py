@@ -16,7 +16,7 @@ def compute_sharpness(image, block_size=50, threshold=100):
             if variance > threshold: # Variance threshold
                 sharpness_map[i // block_size, j // block_size] = 1
             else:
-                sharpness_map[i // block_size, j // block_size] = 0 
+                sharpness_map[i // block_size, j // block_size] = 0
     return sharpness_map
 
 def apply_sharpness_overlay(image, sharpness_map, block_size=50):
@@ -37,19 +37,26 @@ def apply_sharpness_overlay(image, sharpness_map, block_size=50):
     return result
 
 # Load image
-image_path = "./Images/FirstFocusPlane.png"
-#image_path = "./Images/BestFocusPlane.png"
-#image_path = "./Images/LastFocusPlane.png"
+image_name = "FirstFocusPlane.jpg"
+#image_name = "BestFocusPlane.jpg"
+#image_name = "LastFocusPlane.jpg"
+
+image_path = "./Images/" + image_name
+result_path = "./Results/" + image_name
+
 image = cv2.imread(image_path)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Compute sharpness matrix
 block_size = 10 # Block size
-threshold = 60 # Sharpness threshold
+threshold = 50 # Sharpness threshold
 sharpness_map = compute_sharpness(gray, block_size, threshold)
 
 # Apply overlay
 result = apply_sharpness_overlay(image, sharpness_map, block_size)
+
+# Save result
+cv2.imwrite(result_path, result)
 
 # Display result
 cv2.imshow("Image sharpness", result)
